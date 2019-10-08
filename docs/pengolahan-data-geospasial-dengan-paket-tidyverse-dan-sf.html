@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 3 Pengolahan Data Geospasial dengan paket Tidyverse dan sf | Analisis Geospasial menggunakan R dan QGIS</title>
+  <meta name="description" content="Dokumentasi pelatihan analisis geospasial menggunakan R dan QGIS" />
+  <meta name="generator" content="bookdown 0.13 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 3 Pengolahan Data Geospasial dengan paket Tidyverse dan sf | Analisis Geospasial menggunakan R dan QGIS" />
+  <meta property="og:type" content="book" />
+  <meta property="og:url" content="https://firmanhadi.github.io/analisis-geospasial-R-QGIS/" />
+  
+  <meta property="og:description" content="Dokumentasi pelatihan analisis geospasial menggunakan R dan QGIS" />
+  <meta name="github-repo" content="firmanhadi/analisis-geospasial-R-QGIS" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 3 Pengolahan Data Geospasial dengan paket Tidyverse dan sf | Analisis Geospasial menggunakan R dan QGIS" />
+  
+  <meta name="twitter:description" content="Dokumentasi pelatihan analisis geospasial menggunakan R dan QGIS" />
+  
+
+<meta name="author" content="Firman Hadi" />
+
+
+<meta name="date" content="2019-10-09" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="persiapan-data-dan-dasar-dasar-plotting.html"/>
+<link rel="next" href="pengolahan-data-geospasial-dengan-paket-raster-dan-machine-learning.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Analisis Geospasial menggunakan R dan QGIS</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="pengenalan-data-spasial-dan-pengaturan-komputer.html"><a href="pengenalan-data-spasial-dan-pengaturan-komputer.html"><i class="fa fa-check"></i><b>1</b> Pengenalan Data Spasial dan Pengaturan Komputer</a><ul>
+<li class="chapter" data-level="1.1" data-path="pengenalan-data-spasial-dan-pengaturan-komputer.html"><a href="pengenalan-data-spasial-dan-pengaturan-komputer.html#data-spasial-dan-gis"><i class="fa fa-check"></i><b>1.1</b> Data Spasial dan GIS</a></li>
+<li class="chapter" data-level="1.2" data-path="pengenalan-data-spasial-dan-pengaturan-komputer.html"><a href="pengenalan-data-spasial-dan-pengaturan-komputer.html#perangkat-lunak-dan-setup"><i class="fa fa-check"></i><b>1.2</b> Perangkat lunak dan setup</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="persiapan-data-dan-dasar-dasar-plotting.html"><a href="persiapan-data-dan-dasar-dasar-plotting.html"><i class="fa fa-check"></i><b>2</b> Persiapan Data dan Dasar-dasar Plotting</a><ul>
+<li class="chapter" data-level="2.1" data-path="persiapan-data-dan-dasar-dasar-plotting.html"><a href="persiapan-data-dan-dasar-dasar-plotting.html#impor-data"><i class="fa fa-check"></i><b>2.1</b> Impor data</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="persiapan-data-dan-dasar-dasar-plotting.html"><a href="persiapan-data-dan-dasar-dasar-plotting.html#impor-data-ke-qgis"><i class="fa fa-check"></i><b>2.1.1</b> Impor data ke QGIS</a></li>
+<li class="chapter" data-level="2.1.2" data-path="persiapan-data-dan-dasar-dasar-plotting.html"><a href="persiapan-data-dan-dasar-dasar-plotting.html#impor-data-ke-r"><i class="fa fa-check"></i><b>2.1.2</b> Impor data ke R</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="persiapan-data-dan-dasar-dasar-plotting.html"><a href="persiapan-data-dan-dasar-dasar-plotting.html#mengkonversi-tabel-menjadi-data-spasial"><i class="fa fa-check"></i><b>2.2</b> Mengkonversi Tabel menjadi Data Spasial</a></li>
+<li class="chapter" data-level="2.3" data-path="persiapan-data-dan-dasar-dasar-plotting.html"><a href="persiapan-data-dan-dasar-dasar-plotting.html#dasar-dasar-plotting-dan-visualisasi-data"><i class="fa fa-check"></i><b>2.3</b> Dasar-dasar plotting dan visualisasi data</a></li>
+<li class="chapter" data-level="2.4" data-path="persiapan-data-dan-dasar-dasar-plotting.html"><a href="persiapan-data-dan-dasar-dasar-plotting.html#ekspor-data"><i class="fa fa-check"></i><b>2.4</b> Ekspor data</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="pengolahan-data-geospasial-dengan-paket-tidyverse-dan-sf.html"><a href="pengolahan-data-geospasial-dengan-paket-tidyverse-dan-sf.html"><i class="fa fa-check"></i><b>3</b> Pengolahan Data Geospasial dengan paket Tidyverse dan sf</a><ul>
+<li class="chapter" data-level="3.1" data-path="pengolahan-data-geospasial-dengan-paket-tidyverse-dan-sf.html"><a href="pengolahan-data-geospasial-dengan-paket-tidyverse-dan-sf.html#query-data-dan-akuisisi-dari-api"><i class="fa fa-check"></i><b>3.1</b> Query Data dan Akuisisi dari API</a></li>
+<li class="chapter" data-level="3.2" data-path="pengolahan-data-geospasial-dengan-paket-tidyverse-dan-sf.html"><a href="pengolahan-data-geospasial-dengan-paket-tidyverse-dan-sf.html#tidy-data-dan-analisis-dengan-pustaka-tidyverse"><i class="fa fa-check"></i><b>3.2</b> Tidy Data dan Analisis dengan Pustaka Tidyverse</a></li>
+<li class="chapter" data-level="3.3" data-path="pengolahan-data-geospasial-dengan-paket-tidyverse-dan-sf.html"><a href="pengolahan-data-geospasial-dengan-paket-tidyverse-dan-sf.html#rangkuman-statistik-dan-luaran-grafik"><i class="fa fa-check"></i><b>3.3</b> Rangkuman Statistik dan Luaran Grafik</a></li>
+<li class="chapter" data-level="3.4" data-path="pengolahan-data-geospasial-dengan-paket-tidyverse-dan-sf.html"><a href="pengolahan-data-geospasial-dengan-paket-tidyverse-dan-sf.html#membuat-peta-interaktif-dengan-pustaka-leaflet"><i class="fa fa-check"></i><b>3.4</b> Membuat Peta Interaktif dengan Pustaka Leaflet</a></li>
+<li class="chapter" data-level="3.5" data-path="pengolahan-data-geospasial-dengan-paket-tidyverse-dan-sf.html"><a href="pengolahan-data-geospasial-dengan-paket-tidyverse-dan-sf.html#kartografi"><i class="fa fa-check"></i><b>3.5</b> Kartografi</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="pengolahan-data-geospasial-dengan-paket-raster-dan-machine-learning.html"><a href="pengolahan-data-geospasial-dengan-paket-raster-dan-machine-learning.html"><i class="fa fa-check"></i><b>4</b> Pengolahan Data Geospasial dengan Paket raster dan Machine Learning</a><ul>
+<li class="chapter" data-level="4.1" data-path="pengolahan-data-geospasial-dengan-paket-raster-dan-machine-learning.html"><a href="pengolahan-data-geospasial-dengan-paket-raster-dan-machine-learning.html#query-data-landsat-dan-pengolahan-di-qgis"><i class="fa fa-check"></i><b>4.1</b> Query Data Landsat dan Pengolahan di QGIS</a></li>
+<li class="chapter" data-level="4.2" data-path="pengolahan-data-geospasial-dengan-paket-raster-dan-machine-learning.html"><a href="pengolahan-data-geospasial-dengan-paket-raster-dan-machine-learning.html#klasifikasi-terbimbing---logika-machine-learning"><i class="fa fa-check"></i><b>4.2</b> Klasifikasi Terbimbing - Logika Machine Learning</a></li>
+<li class="chapter" data-level="4.3" data-path="pengolahan-data-geospasial-dengan-paket-raster-dan-machine-learning.html"><a href="pengolahan-data-geospasial-dengan-paket-raster-dan-machine-learning.html#klasifikasi-terbimbing---analisis-tutupan-lahan"><i class="fa fa-check"></i><b>4.3</b> Klasifikasi Terbimbing - Analisis Tutupan Lahan</a></li>
+<li class="chapter" data-level="4.4" data-path="pengolahan-data-geospasial-dengan-paket-raster-dan-machine-learning.html"><a href="pengolahan-data-geospasial-dengan-paket-raster-dan-machine-learning.html#alur-integrasi-r-dan-qgis"><i class="fa fa-check"></i><b>4.4</b> Alur Integrasi R dan QGIS</a></li>
+<li class="chapter" data-level="4.5" data-path="pengolahan-data-geospasial-dengan-paket-raster-dan-machine-learning.html"><a href="pengolahan-data-geospasial-dengan-paket-raster-dan-machine-learning.html#produk-peta"><i class="fa fa-check"></i><b>4.5</b> Produk Peta</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="deployment-visualisasi-dan-aplikasi.html"><a href="deployment-visualisasi-dan-aplikasi.html"><i class="fa fa-check"></i><b>5</b> Deployment Visualisasi dan Aplikasi</a><ul>
+<li class="chapter" data-level="5.1" data-path="deployment-visualisasi-dan-aplikasi.html"><a href="deployment-visualisasi-dan-aplikasi.html#dasar-dasar-shiny-server"><i class="fa fa-check"></i><b>5.1</b> Dasar-dasar Shiny Server</a></li>
+<li class="chapter" data-level="5.2" data-path="deployment-visualisasi-dan-aplikasi.html"><a href="deployment-visualisasi-dan-aplikasi.html#berbagi-peta-lewat-shiny"><i class="fa fa-check"></i><b>5.2</b> Berbagi Peta lewat Shiny</a></li>
+<li class="chapter" data-level="5.3" data-path="deployment-visualisasi-dan-aplikasi.html"><a href="deployment-visualisasi-dan-aplikasi.html#reactive-values"><i class="fa fa-check"></i><b>5.3</b> Reactive Values</a></li>
+<li class="chapter" data-level="5.4" data-path="deployment-visualisasi-dan-aplikasi.html"><a href="deployment-visualisasi-dan-aplikasi.html#deploying-the-application"><i class="fa fa-check"></i><b>5.4</b> Deploying the Application</a></li>
+<li class="chapter" data-level="5.5" data-path="deployment-visualisasi-dan-aplikasi.html"><a href="deployment-visualisasi-dan-aplikasi.html#kustomisasi-lanjutan"><i class="fa fa-check"></i><b>5.5</b> Kustomisasi Lanjutan</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Analisis Geospasial menggunakan R dan QGIS</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="pengolahan-data-geospasial-dengan-paket-tidyverse-dan-sf" class="section level1">
+<h1><span class="header-section-number">Chapter 3</span> Pengolahan Data Geospasial dengan paket Tidyverse dan sf</h1>
+<div id="query-data-dan-akuisisi-dari-api" class="section level2">
+<h2><span class="header-section-number">3.1</span> Query Data dan Akuisisi dari API</h2>
+</div>
+<div id="tidy-data-dan-analisis-dengan-pustaka-tidyverse" class="section level2">
+<h2><span class="header-section-number">3.2</span> Tidy Data dan Analisis dengan Pustaka Tidyverse</h2>
+</div>
+<div id="rangkuman-statistik-dan-luaran-grafik" class="section level2">
+<h2><span class="header-section-number">3.3</span> Rangkuman Statistik dan Luaran Grafik</h2>
+</div>
+<div id="membuat-peta-interaktif-dengan-pustaka-leaflet" class="section level2">
+<h2><span class="header-section-number">3.4</span> Membuat Peta Interaktif dengan Pustaka Leaflet</h2>
+</div>
+<div id="kartografi" class="section level2">
+<h2><span class="header-section-number">3.5</span> Kartografi</h2>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="persiapan-data-dan-dasar-dasar-plotting.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="pengolahan-data-geospasial-dengan-paket-raster-dan-machine-learning.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
