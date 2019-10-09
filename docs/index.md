@@ -1,15 +1,15 @@
 --- 
-title: "A Minimal Bookdown Book"
-author: "Sean Kross"
-date: "2016-12-09"
+title: "Analisis Geospasial menggunakan R dan QGIS"
+author: "Firman Hadi"
+date: "2019-10-09"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib]
 biblio-style: apalike
 link-citations: yes
-github-repo: seankross/bookdown-start
-url: 'http\://seankross.com/bookdown-start/'
-description: "Everything you need (and nothing more) to start a bookdown book."
+github-repo: firmanhadi/analisis-geospasial-R-QGIS
+url: 'https\://firmanhadi.github.io/analisis-geospasial-R-QGIS/'
+description: "Dokumentasi pelatihan analisis geospasial menggunakan R dan QGIS"
 ---
 
 # Preface {-}

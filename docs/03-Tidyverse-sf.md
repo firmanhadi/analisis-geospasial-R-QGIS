@@ -1,3 +1,11 @@
-# Diving In
+# Pengolahan Data Geospasial dengan paket Tidyverse dan sf
+ 
+## Query Data dan Akuisisi dari API
 
-Now let's talk details.
+## Tidy Data dan Analisis dengan Pustaka Tidyverse
+
+## Rangkuman Statistik dan Luaran Grafik
+
+## Membuat Peta Interaktif dengan Pustaka Leaflet
+
+## Kartografi
