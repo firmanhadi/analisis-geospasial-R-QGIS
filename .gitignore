@@ -5,3 +5,5 @@ _bookdown_files
 .DS_Store
 *.rds
 .Rapp.history
+*.zip
+978*_Code

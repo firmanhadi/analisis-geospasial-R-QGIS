@@ -1,7 +1,7 @@
 --- 
 title: "Analisis Geospasial menggunakan R dan QGIS"
 author: "Firman Hadi"
-date: "2019-10-09"
+date: "2019-10-21"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib]
