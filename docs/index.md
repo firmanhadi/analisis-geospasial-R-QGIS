@@ -1,7 +1,7 @@
 --- 
 title: "Analisis Geospasial menggunakan R dan QGIS"
 author: "Firman Hadi"
-date: "2019-10-21"
+date: "2019-10-29"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib]
@@ -12,6 +12,9 @@ url: 'https\://firmanhadi.github.io/analisis-geospasial-R-QGIS/'
 description: "Dokumentasi pelatihan analisis geospasial menggunakan R dan QGIS"
 ---
 
-# Preface {-}
+# Pengantar {-}
 
-This is the very first part of the book.
+Panduan ini merupakan materi pengantar penggunaan R dan QGIS untuk analisis geospasial yang dilaksanakan di Fakultas MIPA, Universitas Tanjungpura, Pontianak, tanggal 29 Oktober 2019.
+
+Kegiatan ini terselenggara berkat kerja sama antara OSGEO-ID dan Universitas Tanjungpura.
+
