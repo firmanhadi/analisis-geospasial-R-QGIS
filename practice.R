@@ -85,6 +85,7 @@ view_aoi(color = "#a1d99b") +
 poly_utm <- sp::spTransform(poly, CRSobj = brick_ras$TWI90@crs)
 
 # Create raster template
+# Change TWI90 to 1
 template_rst <- raster(extent(brick_ras$TWI90), # band B2 has resolution 10 m
                        resolution = 30,
                        crs = projection(brick_ras$TWI90))
