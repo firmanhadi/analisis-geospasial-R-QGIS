@@ -1,5 +1,5 @@
 book_filename: "bookdown-start"
-chapter_name: "Chapter "
+chapter_name: "Bab "
 repo: https://github.com/firmanhadi/analisis-geospasial-R-QGIS.git
 output_dir: docs
 rmd_files: ["index.Rmd", "01-Introduction.Rmd", "02-Persiapan-Data.Rmd", "03-Tidyverse-sf.Rmd","04-raster-package.Rmd"]

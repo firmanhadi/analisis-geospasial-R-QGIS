@@ -1,10 +1,93 @@
-# Persiapan Data dan Dasar-dasar Plotting
+# Persiapan Data
 
 Bab ini menjelaskan tentang persiapan data dan dasar-dasar plotting
 
+## Memuat pustaka
+
+```{r 02-installation-3, message=FALSE}
+# Packages for spatial data processing & visualization
+library(rgdal)
+library(gdalUtils)
+library(raster)
+library(sf)
+library(sp)
+library(RStoolbox)
+library(getSpatialData)
+library(rasterVis)
+library(mapview)
+
+library(RColorBrewer)
+library(plotly)
+library(grDevices)
+
+# Machine learning packages
+library(caret)
+library(randomForest)
+library(ranger)
+library(MLmetrics)
+library(nnet)
+library(NeuralNetTools)
+library(LiblineaR)
+
+# Packages for general data processing and parallel computation
+library(data.table)
+library(dplyr)
+library(stringr)
+library(doParallel)
+library(snow)
+library(parallel)
+# set the temporary folder for raster package operations
+rasterOptions(tmpdir = "./cache/temp")
+```
+
+## Set Area of Interest
+
+
+
+
+
+
+
+```{r 02-aoi-3, message=FALSE}
+
+aoi <- matrix(data = c(22.85, 45.93,  # Upper left corner
+                       22.95, 45.93,  # Upper right corner
+                       22.95, 45.85,  # Bottom right corner
+                       22.85, 45.85,  # Bottom left corner
+                       22.85, 45.93), # Upper left corner - closure
+              ncol = 2, byrow = TRUE)
+set_aoi(aoi)
+```
+
+## View Area of Interest
+
+```{r 02-aoi-3, message=FALSE}
+
+```
+
+
+```{r 02-aoi-3, message=FALSE}
+view_aoi()
+```
+
+
 ## Impor data 
 
+```{r 02-aoi-3, message=FALSE}
+fs <- list.files(path="./data", pattern = ".tif$", full.names = TRUE)
+s <- raster::stack(fs)
+```
+
+## Ubah nama bands
+
+bands <- c("B02","B03","B04","B08","B06","B07","B11","B12","B8A")
+
+names(s) <- names(bands)
+
+names(s) <- str_extract(sapply(bands, names),"B.{2}")
+
 ### Impor data ke QGIS
+
 
 ### Impor data ke R
 
